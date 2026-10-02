@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sthrive – Community, Growth & Rewards</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0b130f;
+      --card-bg: rgba(20, 35, 26, 0.6);
+      --card-border: rgba(34, 197, 94, 0.2);
+      --primary-green: #22c55e;
+      --primary-hover: #16a34a;
+      --glow-color: rgba(34, 197, 94, 0.25);
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --text-subtle: #6b7280;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(34, 197, 94, 0.1) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(16, 185, 129, 0.08) 0%, transparent 40%);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Navigation */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: #fff;
+    }
+
+    .logo span {
+      color: var(--primary-green);
+    }
+
+    .btn-nav {
+      background: var(--primary-green);
+      color: #000;
+      font-weight: 700;
+      padding: 10px 24px;
+      border-radius: 99px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 15px var(--glow-color);
+    }
+
+    .btn-nav:hover {
+      background: var(--primary-hover);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 80px 0 60px;
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(34, 197, 94, 0.1);
+      color: var(--primary-green);
+      border: 1px solid var(--card-border);
+      padding: 6px 16px;
+      border-radius: 99px;
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: 52px;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, #ffffff 30%, var(--primary-green));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: var(--text-muted);
+      max-width: 680px;
+      margin: 0 auto 32px;
+    }
+
+    .cta-group {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--primary-green);
+      color: #05140a;
+      font-weight: 700;
+      font-size: 16px;
+      padding: 14px 32px;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 25px var(--glow-color);
+    }
+
+    .btn-primary:hover {
+      background: #86efac;
+      transform: translateY(-2px);
+    }
+
+    /* How It Works Funnel Steps */
+    .steps-section {
+      padding: 60px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: var(--text-muted);
+      margin-bottom: 48px;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .step-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 28px;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .step-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(34, 197, 94, 0.5);
+    }
+
+    .step-num {
+      width: 40px;
+      height: 40px;
+      background: rgba(34, 197, 94, 0.15);
+      border: 1px solid var(--card-border);
+      color: var(--primary-green);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .step-card h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .step-card p {
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    /* Features Grid */
+    .features-section {
+      padding: 60px 0;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+    }
+
+    .feature-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 32px;
+    }
+
+    .feature-card h3 {
+      color: var(--primary-green);
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+
+    .feature-card ul {
+      list-style: none;
+    }
+
+    .feature-card ul li {
+      position: relative;
+      padding-left: 24px;
+      margin-bottom: 10px;
+      color: var(--text-muted);
+      font-size: 15px;
+    }
+
+    .feature-card ul li::before {
+      content: "✓";
+      color: var(--primary-green);
+      position: absolute;
+      left: 0;
+      font-weight: bold;
+    }
+
+    /* Disclaimer Box */
+    .disclaimer-card {
+      background: rgba(255, 255, 255, 0.02);
+      border-left: 4px solid var(--primary-green);
+      padding: 24px;
+      border-radius: 0 16px 16px 0;
+      margin: 60px 0;
+    }
+
+    .disclaimer-card h4 {
+      font-size: 16px;
+      margin-bottom: 8px;
+      color: var(--primary-green);
+    }
+
+    .disclaimer-card p {
+      font-size: 13px;
+      color: var(--text-subtle);
+      line-height: 1.6;
+    }
+
+    /* Footer / Final CTA */
+    footer {
+      border-top: 1px solid var(--card-border);
+      padding: 40px 0;
+      text-align: center;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 20px;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .footer-links a:hover {
+      color: var(--primary-green);
+    }
+
+    .copyright {
+      font-size: 13px;
+      color: var(--text-subtle);
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 36px; }
+      .hero p { font-size: 15px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Navbar -->
+    <nav>
+      <div class="logo">Sthrive<span>.</span></div>
+      <a href="#download" class="btn-nav">Get Started</a>
+    </nav>
+
+    <!-- Hero Header -->
+    <header class="hero">
+      <span class="badge">Community & Growth Platform</span>
+      <h1>Connect, Complete Tasks <br>& Unlock Exciting Rewards</h1>
+      <p>Join local networks, participate in daily community challenges, track your progress, and earn points easily in one single app.</p>
+      <div class="cta-group" id="download">
+        <a href="#" class="btn-primary">Download Sthrive App</a>
+      </div>
+    </header>
+
+    <!-- Funnel / Step-by-Step Pathway -->
+    <section class="steps-section">
+      <h2 class="section-title">How Sthrive Works</h2>
+      <p class="section-subtitle">Your journey from joining a community to unlocking rewards</p>
+      
+      <div class="grid-4">
+        <div class="step-card">
+          <div class="step-num">1</div>
+          <h3>Join Communities</h3>
+          <p>Connect with your organization, local neighborhood, or regional groups.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">2</div>
+          <h3>Complete Tasks</h3>
+          <p>Engage in daily activities, skill quizzes, surveys, and promotional campaigns.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">3</div>
+          <h3>Track Progress</h3>
+          <p>Monitor your coins, streaks, rank on the leaderboard, and unlock milestone badges.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">4</div>
+          <h3>Unlock Benefits</h3>
+          <p>Redeem your accumulated coins for digital vouchers, gift cards, and exclusive offers.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Features & Rewards Details -->
+    <section class="features-section">
+      <h2 class="section-title">Why Choose Sthrive?</h2>
+      <p class="section-subtitle">Built to make community engagement seamless and fun</p>
+
+      <div class="grid-2">
+        <div class="feature-card">
+          <h3>Key Features</h3>
+          <ul>
+            <li>Join and manage active community groups</li>
+            <li>Complete daily challenges and interactive tasks</li>
+            <li>Invite friends and grow your personal network</li>
+            <li>Discover announcements and local opportunities</li>
+            <li>Clear and transparent activity tracking</li>
+          </ul>
+        </div>
+
+        <div class="feature-card">
+          <h3>Eligible Reward Activities</h3>
+          <ul>
+            <li>Community participation tasks</li>
+            <li>Daily login bonuses and quiz challenges</li>
+            <li>Promotional engagement campaigns</li>
+            <li>Referral bonuses for expanding the network</li>
+            <li>Secure payout options (Gift cards, UPI/Wallet rewards)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Compliance / Important Information Box -->
+    <div class="disclaimer-card">
+      <h4>Important Information</h4>
+      <p>Sthrive is a community engagement platform. Rewards are provided only for eligible activities where available and may change over time. Participation does not guarantee financial benefits or income. Sthrive is not an employment, investment, or financial services platform.</p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="delete-account.html">Account Deletion</a>
+        <a href="mailto:sthrive.support@gmail.com">Contact Support</a>
+      </div>
+      <p class="copyright">&copy; 2026 Sthrive. All rights reserved.</p>
+    </footer>
+  </div>
+
+</body>
+</html>
