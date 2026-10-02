@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frequently Asked Questions – Sthrive.app</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #070d0a;
+      --card-bg: rgba(18, 33, 24, 0.7);
+      --card-border: rgba(34, 197, 94, 0.18);
+      --primary-green: #22c55e;
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --text-subtle: #6b7280;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      line-height: 1.6;
+      background-image: radial-gradient(circle at 10% 15%, rgba(34, 197, 94, 0.12) 0%, transparent 45%);
+    }
+    .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+    nav {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 20px 0; border-bottom: 1px solid var(--card-border);
+    }
+    .logo { font-size: 24px; font-weight: 800; color: #fff; text-decoration: none; }
+    .logo span { color: var(--primary-green); }
+    .header { text-align: center; margin: 40px 0 30px; }
+    .header h1 { font-size: 36px; color: #fff; margin-bottom: 10px; }
+    .header p { color: var(--text-muted); }
+    .faq-list { display: flex; flex-direction: column; gap: 16px; margin-bottom: 60px; }
+    .faq-item {
+      background: var(--card-bg); border: 1px solid var(--card-border);
+      border-radius: 16px; padding: 24px;
+    }
+    .faq-item h3 { font-size: 18px; color: var(--primary-green); margin-bottom: 8px; }
+    .faq-item p { color: var(--text-muted); font-size: 15px; }
+    footer { border-top: 1px solid var(--card-border); padding: 30px 0; text-align: center; color: var(--text-subtle); font-size: 14px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <a href="index.html" class="logo">Sthrive<span>.app</span></a>
+      <a href="index.html" style="color: var(--primary-green); text-decoration: none; font-weight: 600;">← Back to Home</a>
+    </nav>
+
+    <div class="header">
+      <h1>Help & FAQ</h1>
+      <p>Find answers to common questions about Sthrive.app</p>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <h3>What is Sthrive.app?</h3>
+        <p>Sthrive.app is a community engagement platform where users participate in local group activities, complete surveys, take daily skill quizzes, and earn reward points for active participation.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How do I earn Sthrive Coins?</h3>
+        <p>You earn coins by engaging in daily challenges, maintaining streak milestones, completing community feedback surveys, and inviting verified friends to join your group.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How do I redeem my rewards?</h3>
+        <p>Once you reach the minimum balance required (e.g., 500 coins), you can submit a redemption request in the wallet tab for direct digital transfers or gift vouchers.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How long does payout processing take?</h3>
+        <p>Most redemption requests are processed within 24 to 48 hours after security verification.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Why were my coins deducted or pending?</h3>
+        <p>Coins remain pending while task completion is verified. Deductions or cancellations occur if automated system checks flag fake task completion, duplicate accounts, or VPN usage.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How can I contact support?</h3>
+        <p>You can email our support team anytime at <strong>sthrive.support@gmail.com</strong> or use our <a href="contact.html" style="color: var(--primary-green);">Contact Page</a>.</p>
+      </div>
+    </div>
+
+    <footer>&copy; 2026 Sthrive.app. All rights reserved.</footer>
+  </div>
+</body>
+</html>
